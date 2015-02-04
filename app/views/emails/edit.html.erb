@@ -1,0 +1,6 @@
+<%= form_for [@contact, @email] do |f| %>
+	<%= f.label :email_address %>
+	<%= f.text_field :email_address %>
+	<%= f.submit 'Save' %>
+	<%= link_to 'Cancel', contact_path(@contact) %>
+<% end %>

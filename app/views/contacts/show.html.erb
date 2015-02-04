@@ -1,11 +1,14 @@
 <div>
-	<%= @contact.id %>
-</div>
-<div>
 	<%= @contact.name %>
 </div>
 <div>
 	<%= @contact.address %>
+</div>
+<div>
+	<%= link_to("Update Contact", edit_contact_path(@contact)) %>
+</div>
+<div>
+	<%= link_to("Delete Contact", contact_path(@contact), method: :delete, data: { confirm: 'Are you sure?'}) %>
 </div>
 <div>
 	<%= link_to("Add Email", new_contact_email_path(@contact)) %>
@@ -13,7 +16,11 @@
 <div>
 	<ul>
 	<% @contact.emails.each do |e| %>
-		<li><%= e.email_address %></li>
+		<li>
+			<%= e.email_address %>
+			<%= link_to("Update", edit_contact_email_path(@contact, e)) %>
+			<%= link_to("Delete", contact_email_path(@contact, e), method: :delete, data: { confirm: 'Are you sure?'}) %>
+		</li>
 	<% end %>
 	</ul>
 </div>

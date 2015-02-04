@@ -1,0 +1,9 @@
+<%= form_for @contact do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<br>
+	<%= f.label :address %>
+	<%= f.text_area :address, size: "50x5" %>
+	<%= f.submit 'Save' %>
+	<%= link_to 'Cancel', contact_path(@contact) %>
+<% end %>
