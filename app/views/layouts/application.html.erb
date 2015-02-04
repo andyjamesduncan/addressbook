@@ -7,8 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<p>
+		<h1>Welcome to the Address Book App</h1>
+	</p>
 
-<%= yield %>
+	<%= yield %>
+
+	<p>
+		<a href="/">Home</a> | <a href="/contacts/new">Add Contact</a> | <a href="/contacts/list">Contact List</a>
+	</p>
+
+	<p>
+		<% counter = 0 %>
+		<% ('a'..'z').each do |letter| %>
+			<% if counter == 0 %>
+				<% counter = 1 %>
+			<% else %>
+				<%= ' | ' %>
+			<% end %>
+				<a href="<%= letter %>"><%= letter %></a>
+		<% end %>
+	</p>
 
 </body>
 </html>

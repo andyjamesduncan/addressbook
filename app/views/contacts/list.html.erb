@@ -1,0 +1,9 @@
+<% if @all_contacts.any? %>
+	<ul>
+ 		<% @all_contacts.each do |c| %>
+ 			<li><%= c.name %></li>
+ 		<% end %>
+ 	</ul>
+<% else %>
+	<h2>No contacts currently in address book</h2>
+<% end %>
