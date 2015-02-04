@@ -1,0 +1,13 @@
+<% if @email.errors.any? %>
+	<ul>
+ 		<% @email.errors.full_messages.each do |error_msg| %>
+ 			<li><%= error_msg %></li>
+ 		<% end %>
+ 	</ul>
+<% end %>
+
+<%= form_for [@contact, @email] do |f| %>
+	<%= f.label :email_address %>
+	<%= f.text_field :email_address %>
+	<%= f.submit 'Save' %>
+<% end %>

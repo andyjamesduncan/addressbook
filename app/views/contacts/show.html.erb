@@ -1,0 +1,19 @@
+<div>
+	<%= @contact.id %>
+</div>
+<div>
+	<%= @contact.name %>
+</div>
+<div>
+	<%= @contact.address %>
+</div>
+<div>
+	<%= link_to("Add Email", new_contact_email_path(@contact)) %>
+</div>
+<div>
+	<ul>
+	<% @contact.emails.each do |e| %>
+		<li><%= e.email_address %></li>
+	<% end %>
+	</ul>
+</div>

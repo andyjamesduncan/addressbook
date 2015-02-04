@@ -1,0 +1,4 @@
+class AddContactIdToEmailsAndPhones < ActiveRecord::Migration
+  def change
+  end
+end
